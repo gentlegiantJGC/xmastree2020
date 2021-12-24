@@ -117,10 +117,6 @@ class neopixel:
                 sys.exit(0)
             self._pixels = self._pixels_temp.copy()
             self._show = True
-            # The real library does some other things in this method which make it take longer.
-            # Add a delay here to make the simulation play at the same speed.
-            # I used the xmaslights-spin.py compared to Matt Parker's video to get this delay time
-            time.sleep(0.027)
 
         def run(self):
             # create a figure
