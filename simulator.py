@@ -48,7 +48,6 @@ except AttributeError:
 from typing import Iterable, Tuple
 import sys
 from threading import Thread
-import time
 
 import matplotlib
 import matplotlib.pyplot as plt
@@ -138,3 +137,7 @@ class neopixel:
                     ax.set_box_aspect([max(ax) - min(ax) for ax in self._locations])
                     self._locations_changed = False
                 plt.pause(1 / 100_000)
+
+
+if __name__ == '__main__':
+    print("Simulator.py is not directly callable. See the docstring in the file for usage.")
