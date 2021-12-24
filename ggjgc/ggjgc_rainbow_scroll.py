@@ -12,7 +12,7 @@ from colorsys import hsv_to_rgb
 from matts_tree_helpers import get_coords_pixels, FrameManager
 
 
-def snow():
+def rainbow_scroll():
     # NOTE THE LEDS ARE GRB COLOUR (NOT RGB)
 
     # If you want to have user changeable values, they need to be entered from the command line
@@ -36,10 +36,10 @@ def snow():
             # calculate the colour for each pixel
             t = time.time()
             for i, coord in enumerate(coords):
-                tree_offset = (coord[2] - min_y)/(max_y-min_y)
+                tree_offset = (coord[2] - min_y) / (max_y - min_y)
                 hue = (speed * t + tree_offset) % 1
                 rgb = hsv_to_rgb(hue, 1, 1)
-                pixels[i] = (255*rgb[1], 255*rgb[0], 255*rgb[2])
+                pixels[i] = (255 * rgb[1], 255 * rgb[0], 255 * rgb[2])
 
             # use the show() option as rarely as possible as it takes ages
             # do not use show() each time you change a LED but rather wait until you have changed them all
@@ -47,4 +47,4 @@ def snow():
 
 
 if __name__ == "__main__":
-    snow()
+    rainbow_scroll()
